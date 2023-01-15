@@ -1,13 +1,30 @@
 .slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   border: 5px solid black;
   width: 85vw;
-  height: 50vh;
+  height: 80vh;
 
+}
+
+button {
+  width: 9%;
+  height: 100%;
+}
+
+
+.characterField {
+  width: 82%;
 }
 
 .characterImage {
-  width: 100px;
-  height: 100px
+  width: 100%;
 }
 
+.sliderButton {
+  border: 5px solid rgb(188, 7, 7);
+  width: 2vw;
+  height: 50vh;
+}

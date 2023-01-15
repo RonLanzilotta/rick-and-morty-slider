@@ -1,27 +1,20 @@
 import { useState, useEffect } from 'react';
-import Heading from './Heading'
+import { Route, Routes } from 'react-router-dom'
+import Navbar from './Navbar'
 import Slider from './Slider'
 import './App.css';
 
 
 export default function App() {
-  const [characters, setCharacters] = useState([]);
-
-  useEffect(() => {
-    fetchCharacters();
-  }, []);
-
-  const fetchCharacters = () => {
-    fetch(`https://project2-production-7023.up.railway.app/characters`)
-      .then((res) => res.json())
-      .then((data) => setCharacters(data))
-  }
 
   return (
-    <main className="page">
-        <Heading className="heading"/>
-        <Slider character={characters} className="slider"/>
-    </main>
+
+<div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Slider />}></Route>
+      </Routes>
+    </div>
   );
 }
 

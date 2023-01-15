@@ -1,31 +1,52 @@
-import { FormControlUnstyledContext } from '@mui/base';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function Slider({ character }) {
+export default function Slider() {
 
-    const [index, setIndex] = useState([0])
+    const [characters, setCharacters] = useState([]);
+    const [index, setIndex] = useState(0)
 
-    function changeCharacter() {
-        if (index === -1) {
-            return index++;
+    useEffect(() => {
+        fetchCharacters();
+      }, []);
+    
+      const fetchCharacters = () => {
+        fetch(`https://project2-production-7023.up.railway.app/characters`)
+          .then((res) => res.json())
+          .then((data) => setCharacters(data))
+      }
 
-        } else if ( index >= 20 ) {
-            return index;
+    function incrementCharacter() {
+        if ( index === 19 ) {
+            setIndex(0);
 
         } else {
-            
-        }
-        }
+            setIndex((prev) => prev + 1)
+            console.log(index)
+        }}
+
+    function decrementCharacter() {
+        if ( index === 0 ) {
+            setIndex(19)
+
+        } else {
+            setIndex((prev) => prev - 1)
+        }}
     
-  
+    if (characters.length === 0) return <h1>Loading...</h1>;
+
   return (
     <div className="slider">
-        <div className="sliderButton" id="left" onClick={() => setIndex(index--)}></div>
-        <div className="imageField">
-            <img className="characterImage" src={character[index].image}></img>
+        <button className="left" onClick={decrementCharacter}>&lt;</button>
+        <div className="characterField">
+            <img className="characterImage" src={characters[index].image}></img>
+            <ul>
+                <li className="listItem">{characters[index].name}</li>
+                <li className="listItem">{characters[index].species}</li>
+                <li className="listItem">{characters[index].gender}</li>
+                <li className="listItem">{characters[index].status}</li>
+            </ul>
         </div>
-        <div className="characterInfo"></div>
-        <div className="sliderButton" id="right" onClick={() => setIndex(index++)}></div>
+        <button className="right" onClick={incrementCharacter}>&gt;</button>
     </div>
   );
 }
