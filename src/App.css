@@ -10,6 +10,14 @@
   max-height: 814px;
 }
 
+.title {
+  text-align: center;
+}
+
+.navbar {
+  margin: 0 auto;
+}
+
 button {
   width: 10%;
   height: 100%;
