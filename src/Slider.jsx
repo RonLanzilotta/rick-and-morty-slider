@@ -39,11 +39,11 @@ export default function Slider() {
         <button className="left" onClick={decrementCharacter}>&lt;</button>
         <div className="characterField">
             <img className="characterImage" src={characters[index].image}></img>
-            <ul>
-                <li className="listItem">{characters[index].name}</li>
-                <li className="listItem">{characters[index].species}</li>
-                <li className="listItem">{characters[index].gender}</li>
-                <li className="listItem">{characters[index].status}</li>
+            <ul className="characterDetails">
+                <li><span>Name: </span>{characters[index].name}</li>
+                <li><span>Species: </span>{characters[index].species}</li>
+                <li><span>Gender: </span>{characters[index].gender}</li>
+                <li><span>Status: </span>{characters[index].status}</li>
             </ul>
         </div>
         <button className="right" onClick={incrementCharacter}>&gt;</button>
