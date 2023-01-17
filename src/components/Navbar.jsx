@@ -5,7 +5,6 @@ export default function Navbar() {
         <header>
             <h1 className="title">RickDex</h1>
             <nav className="navbar">
-                <Link to="/">Home</Link>
                 <Link to="/">Edit Character</Link>
                 <Link to="/">Create Character</Link>
                 <Link to="/">Delete Character</Link>
