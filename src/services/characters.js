@@ -4,12 +4,22 @@ import api from "./apiConfig.js";
 
 export const getCharacters = async () => {
   try {
-    const response = await api.get("/");
+    const response = await api.get("/characters");
     return response.data;
   } catch (error) {
     throw error;
   }
 };
+
+// get a single character, only used within the update functionality of this app.
+export const getCharacter = async (id) => {
+    try {
+      const response = await api.get(`/characters/${id}`);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
 
 // create a new character and post it to the API
 

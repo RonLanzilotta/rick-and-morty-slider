@@ -1,53 +1,83 @@
-import { useState, useEffect } from 'react'
-import Navbar from '../components/Navbar.jsx'
-import { getCharacters } from '../services/characters.js';
+import { useState, useEffect } from "react";
+import { deleteCharacter, getCharacters } from "../services/characters.js";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 export default function Slider() {
+  const [characters, setCharacters] = useState([]);
+  const [index, setIndex] = useState(0);
 
-    const [characters, setCharacters] = useState([]);
-    const [index, setIndex] = useState(0)
+  let { id } = useParams()
+  let navigate = useNavigate();
 
-    useEffect(() => {
-        fetchCharacters();
-      }, []);
-    
-      const fetchCharacters = () => {
-        fetch(`https://project2-production-7023.up.railway.app/characters`)
-          .then((res) => res.json())
-          .then((data) => setCharacters(data))
-      }
+  useEffect(() => {
+    fetchCharacters();
+  }, []);
 
-    function incrementCharacter() {
-        if ( index === 19 ) {
-            setIndex(0);
+  async function fetchCharacters() {
+    const allCharacters = await getCharacters();
+    setCharacters(allCharacters);
+  }
 
-        } else {
-            setIndex((prev) => prev + 1)
-        }}
+  function incrementCharacter() {
+    if (index === characters.length - 1) {
+      setIndex(0);
+    } else {
+      setIndex((prev) => prev + 1);
+    }
+  }
 
-    function decrementCharacter() {
-        if ( index === 0 ) {
-            setIndex(19)
+  function decrementCharacter() {
+    if (index === 0) {
+      setIndex(characters.length - 1);
+    } else {
+      setIndex((prev) => prev - 1);
+    }
+  }
 
-        } else {
-            setIndex((prev) => prev - 1)
-        }}
-    
-    if (characters.length === 0) return <h1>Loading...</h1>;
+  async function handleDelete() {
+    await deleteCharacter(characters[index]._id)
+    navigate("/", { replace: true })
+    alert("Character Deleted!")
+
+  }
+
+  if (characters.length === 0) return <h1>Loading...</h1>;
 
   return (
     <div className="slider">
-        <button className="left" onClick={decrementCharacter}>&lt;</button>
-        <div className="characterField">
-            <img className="characterImage" src={characters[index].image}></img>
-            <ul className="characterDetails">
-                <li><span>Name: </span>{characters[index].name}</li>
-                <li><span>Species: </span>{characters[index].species}</li>
-                <li><span>Gender: </span>{characters[index].gender}</li>
-                <li><span>Status: </span>{characters[index].status}</li>
-            </ul>
+      <button className="left" onClick={decrementCharacter}>
+        &lt;
+      </button>
+      <div className="characterField">
+        <img className="characterImage" src={characters[index].image}></img>
+        <ul className="characterDetails">
+          <li>
+            <span>Name: </span>
+            {characters[index].name}
+          </li>
+          <li>
+            <span>Species: </span>
+            {characters[index].species}
+          </li>
+          <li>
+            <span>Gender: </span>
+            {characters[index].gender}
+          </li>
+          <li>
+            <span>Status: </span>
+            {characters[index].status}
+          </li>
+        </ul>
+        <div className="button-container">
+          <Link to={`/characters/${characters[index]._id}/update`}>
+            <button>EDIT</button>
+          </Link>
+          <button onClick={handleDelete}>DELETE</button>
         </div>
-        <button className="right" onClick={incrementCharacter}>&gt;</button>
+      </div>
+      <button className="right" onClick={incrementCharacter}>
+        &gt;
+      </button>
     </div>
   );
 }

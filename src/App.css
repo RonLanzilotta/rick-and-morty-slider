@@ -44,8 +44,6 @@ button {
   flex-direction: column;
   justify-content: space-evenly;
   align-content: space-between;
-
-
 }
 
 .sliderButton {
@@ -66,6 +64,15 @@ li {
   margin: 0 33px -1px 0;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-container > button {
+  width: 100%;
+}
+
 @media screen and (max-width: 1200px) {
   li {
     font-size: 2vw;
@@ -76,10 +83,9 @@ li {
 
 @media screen and (max-width: 900px) {
   li {
-    font-size: 3.0vw;
+    font-size: 3vw;
     padding: 4%;
     text-align: center;
-
   }
 }
 

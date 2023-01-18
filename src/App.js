@@ -16,7 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Slider />}/>
         <Route path="/add-character" element={<CreateCharacter />}/>
-        <Route path="/characters/:id" element={<UpdateCharacter />}/>
+        <Route path="/characters/:id/update" element={<UpdateCharacter />}/>
       </Routes>
     </div>
   );

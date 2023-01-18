@@ -5,8 +5,8 @@ import axios from 'axios'
 let apiUrl;
 
 const apiUrls = {
-    production: "https://project2-production-7023.up.railway.app/characters",
-    development: "http://localhost:3000/",
+    production: "https://project2-production-7023.up.railway.app/",
+    development: "https://project2-production-7023.up.railway.app/",
 };
 
 //looks to the window object and points to the local host. "if I"m running locally, then......"
