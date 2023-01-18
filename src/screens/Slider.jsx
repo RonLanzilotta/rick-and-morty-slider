@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import Navbar from '../components/Navbar.jsx'
+import { getCharacters } from '../services/characters.js';
 
 export default function Slider() {
 
@@ -21,7 +23,6 @@ export default function Slider() {
 
         } else {
             setIndex((prev) => prev + 1)
-            console.log(index)
         }}
 
     function decrementCharacter() {
