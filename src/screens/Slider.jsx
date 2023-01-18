@@ -6,7 +6,7 @@ export default function Slider() {
   const [characters, setCharacters] = useState([]);
   const [index, setIndex] = useState(0);
 
-  let { id } = useParams()
+  let { id } = useParams();
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -35,10 +35,9 @@ export default function Slider() {
   }
 
   async function handleDelete() {
-    await deleteCharacter(characters[index]._id)
-    navigate("/", { replace: true })
-    alert("Character Deleted!")
-
+    await deleteCharacter(characters[index]._id);
+    window.location.reload();
+    alert("Character Deleted!");
   }
 
   if (characters.length === 0) return <h1>Loading...</h1>;
