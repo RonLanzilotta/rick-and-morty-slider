@@ -11,13 +11,19 @@ export default function App() {
   return (
 
 <div className="App">
+
       <Navbar />
+
       <Routes>
+        
         <Route path="/" element={<Slider />}/>
+
         <Route path="/add-character" element={<CreateCharacter />}/>
+        
         <Route path="/characters/:id/update" element={<UpdateCharacter />}/>
+
       </Routes>
-    </div>
+</div>
   );
 }
 

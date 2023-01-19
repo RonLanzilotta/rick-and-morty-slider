@@ -5,6 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+    background: url(../imgs/rick-and-morty-wallpaper-portal-wallpaper-004.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    /* background-image: url(../imgs/rick-and-morty-wallpaper-portal-wallpaper-004.jpeg);
+    background-position: center;
+    background-repeat: none;
+    background-size: 200%; */
+  
+  
 }
 
 code {
