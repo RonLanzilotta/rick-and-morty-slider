@@ -46,23 +46,24 @@ header {
 }
 
 .left, .right {
+  color:rgb(24, 167, 196);
   width: 10%;
   height: 100%;
   font-size: 50px;
   font-weight: 900;
   border: none;
   border-radius: 2px;
-  background-color: rgb(136, 92, 238)
+  background-color: rgb(101, 40, 241)
 }
 
 .left {
-  text-shadow: black 5px 0px 5px;
+  text-shadow: rgb(184, 251, 49) 5px 0px 5px;
   border-right: 4px solid rgb(69, 0, 230);
   ;
 }
 
 .right {
-    text-shadow: black -5px 0px 5px;
+    text-shadow: rgb(184, 251, 49) -5px 0px 5px;
     border-left: 4px solid rgb(69, 0, 230);
 
 }
@@ -98,7 +99,7 @@ header {
   flex-direction: column;
   justify-content: space-evenly;
   align-content: space-between;
-  margin-top: 3px;
+  margin-top: px;
   
 }
 
