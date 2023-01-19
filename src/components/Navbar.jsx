@@ -6,11 +6,11 @@ export default function Navbar() {
 
         <header>
 
-            <NavLink to="/"><button className="navButton">Home</button></NavLink>
+            <NavLink to="/"><button className="navButtonHome">Home</button></NavLink>
 
             <h1 className="title">RickDex</h1>
 
-            <NavLink to="/add-character"><button className="navButton">Create Character</button></NavLink>
+            <NavLink to="/add-character"><button className="navButtonCreate">Create Character</button></NavLink>
 
         </header>
     )

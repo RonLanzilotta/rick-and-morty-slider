@@ -15,7 +15,6 @@ header {
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  margin: 0 0 0 12px
 }
 
 .title {
@@ -23,12 +22,17 @@ header {
   font-size: 4vh;
   font-size: 4vw;
   font-weight: 800;
-  padding: 0 6%;
+  padding: 0 5%
 }
 
-.navButton {
+.navButtonCreate {
   width: 6em;
+  margin: 33% 0 0 0;
+}
 
+.navButtonHome {
+  width: 6em;
+  margin: 42% 0 0 0;
 }
 
 .slider {
