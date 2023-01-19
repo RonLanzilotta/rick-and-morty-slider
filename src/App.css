@@ -10,15 +10,40 @@
   max-height: 814px;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin: 0 0 0 12px
+}
+
 .title {
   text-align: center;
+  font-size: 4vh;
+  font-size: 4vw;
+  font-weight: 800;
+  padding: 0 6%;
 }
 
-.navbar {
+.navButton {
+  width: 6em;
+
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
+  border: 5px solid black;
+  width: 59vw;
+  height: 80vh;
+  max-width: 600px;
+  max-height: 814px;
 }
 
-button {
+.left, .right {
   width: 10%;
   height: 100%;
   font-size: x-large;
@@ -36,7 +61,7 @@ button {
 .characterImage {
   width: 100%;
   max-width: 480px;
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 .characterDetails {
@@ -44,19 +69,13 @@ button {
   flex-direction: column;
   justify-content: space-evenly;
   align-content: space-between;
-}
-
-.sliderButton {
-  border: 5px solid rgb(188, 7, 7);
-  width: 9%;
-  height: 100%;
+  margin-top: 5;
 }
 
 li {
-  /* display: flex; */
   list-style: none;
   font-weight: 400;
-  padding: 1.5%;
+  padding: 1%;
   font-size: 1.5vw;
   flex-wrap: wrap;
   overflow-wrap: break-word;
@@ -70,13 +89,13 @@ li {
 }
 
 .button-container > button {
-  width: 100%;
+  min-width: 20%;
 }
 
 @media screen and (max-width: 1200px) {
   li {
     font-size: 2vw;
-    padding: 2.5%;
+    padding: 1.5%;
     text-align: center;
   }
 }
@@ -84,7 +103,7 @@ li {
 @media screen and (max-width: 900px) {
   li {
     font-size: 3vw;
-    padding: 4%;
+    padding: 3%;
     text-align: center;
   }
 }
@@ -100,11 +119,11 @@ li {
 @media screen and (max-width: 500px) {
   li {
     font-size: 5vw;
-    padding: 12%;
+    padding: 10%;
     text-align: center;
   }
 }
 
 span {
-  font-weight: 800;
+  font-weight: 700;
 }

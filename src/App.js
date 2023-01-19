@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Slider from './screens/Slider.jsx'
 import CreateCharacter from './screens/CreateCharacter.jsx';
-import services from './services/characters.js'
 import UpdateCharacter from './screens/UpdateCharacter.jsx'
 
 

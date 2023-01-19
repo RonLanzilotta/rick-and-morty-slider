@@ -1,22 +1,17 @@
-import { NavLink, useParams, useNavigate } from 'react-router-dom'
-import { deleteCharacter, getCharacters } from '../services/characters.js'
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
 
-    // async function handleDelete() {
-    //     await deleteCharacter(id)
-    //     navigate("/", { replace: true })
-    //     alert("Character Deleted!")
-
-    // }
-
     return (
+
         <header>
+
+            <NavLink to="/"><button className="navButton">Home</button></NavLink>
+
             <h1 className="title">RickDex</h1>
-            <nav className="navbar">
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/add-character">Create Character</NavLink>
-            </nav>
+
+            <NavLink to="/add-character"><button className="navButton">Create Character</button></NavLink>
+
         </header>
     )
 }

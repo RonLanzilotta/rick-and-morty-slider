@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { updateCharacter, getCharacter } from "../services/characters.js";
 
 export default function UpdateCharacter() {
+
   const [character, setCharacter] = useState({
     name: "",
     species: "",
@@ -39,7 +40,9 @@ export default function UpdateCharacter() {
   };
 
   return (
+
     <div>
+
       <form className="create-form" onSubmit={handleSubmit}>
         <input
           className="text"
@@ -83,7 +86,9 @@ export default function UpdateCharacter() {
         />
 
         <button type="submit">Update Character</button>
+
       </form>
+      
     </div>
   );
 }
