@@ -99,7 +99,7 @@ header {
   flex-direction: column;
   justify-content: space-evenly;
   align-content: space-between;
-  margin-top: px;
+  margin-top: -1px;
   
 }
 
@@ -134,7 +134,7 @@ li {
 
 @media screen and (max-width: 900px) {
   li {
-    font-size: 3vw;
+    font-size: 4vw;
     padding: 3%;
     text-align: center;
   }
@@ -142,16 +142,16 @@ li {
 
 @media screen and (max-width: 600px) {
   li {
-    font-size: 4.7vw;
-    padding: 7.5%;
+    font-size: 4.2vw;
+    padding: 6%;
     text-align: center;
   }
 }
 
 @media screen and (max-width: 500px) {
   li {
-    font-size: 5vw;
-    padding: 10%;
+    font-size: 4.7vw;
+    padding: 8%;
     text-align: center;
   }
 }
