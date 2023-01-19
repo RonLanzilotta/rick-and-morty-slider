@@ -1,9 +1,15 @@
+@font-face {
+  font-family: 'get_schwifty';
+  src: url(../font/get_schwifty.ttf);
+}
+
 .slider {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  border: 5px solid black;
+  border-radius: 10px;
+  border: 5px solid rgb(69, 0, 230);
   width: 59vw;
   height: 80vh;
   max-width: 600px;
@@ -18,11 +24,15 @@ header {
 }
 
 .title {
+  font-family: get_schwifty;
+  color:rgb(9, 195, 232);
+  text-shadow: rgb(146, 198, 41) 1px 0 10px;
+  -webkit-text-stroke: .2px black;
   text-align: center;
   font-size: 4vh;
-  font-size: 4vw;
+  font-size: 5vw;
   font-weight: 800;
-  padding: 0 5%
+  padding: 0 5%;
 }
 
 .navButtonCreate {
@@ -40,7 +50,7 @@ header {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  border: 5px solid black;
+  border: 7px solid black;
   width: 59vw;
   height: 80vh;
   max-width: 600px;
@@ -50,8 +60,23 @@ header {
 .left, .right {
   width: 10%;
   height: 100%;
-  font-size: x-large;
+  font-size: 50px;
   font-weight: 900;
+  border: none;
+  border-radius: 2px;
+}
+
+.left {
+  text-shadow: black 5px 0px 5px;
+}
+
+.right {
+    text-shadow: black -5px 0px 5px;
+}
+
+.left:hover, .right:hover {
+  background-color: rgb(23, 251, 3);
+  opacity: .7;
 }
 
 .characterField {
